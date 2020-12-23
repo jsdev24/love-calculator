@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+section {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    padding: 50px 30px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9, 
+                 -20px -20px 60px #ffffff;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    outline: none;
+    border: 2px solid rgb(233, 233, 233);
+    border-radius: 3px;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+button#calculate {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #f9455f;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+}
+
+.result {
+    margin-top: 25px;
+    position: relative;
+}
+
+.result img {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+.result #percentage {
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f9455f;
+    display: none;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 3px;
+    padding: 15px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    box-shadow:  20px 20px 60px #d9d9d9, 
+                 -20px -20px 60px #ffffff;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
+@media only screen and (max-width: 500px) {
+    .container {
+        width: 300px;
+    }
+
+    .result img {
+        width: 85px;
+    }
+
+    .result #percentage {
+        top: 28px;
+    }
+}
